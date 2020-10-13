@@ -1,8 +1,6 @@
 package simpleos.processor;
 
 import simpleos.memory.*;
-import java.util.*;
-import java.lang.String;
 
 
 public  class MyProcessor extends Processor {
@@ -18,68 +16,37 @@ public  class MyProcessor extends Processor {
     private final int storeout = 7;
     private final int add = 5;
     private final int subtract = 4;
-    private final int halt = 43;
+    private final int halt = 8;
     private boolean didhalt;
 
 
-
     public MyProcessor(){
-        this.PC = new MyMemory(1);//initialize program counter of size 1
-        this.IR = new MyMemory(8);//initialize instruction register of size 8
-        this.ACC = new MyMemory(8); //initialize accumulator of size 8
-        this.PC.setValue(0,0); //sets program counter to 0
-        // memoryprocess = memory;
-        // this.memory = new MyMemory(8);
-    }
-    // This method fetches instruction at address in memory specified by PC and places it into the IR(instruction register)
-    public int fetch(){//not working
-        // int addr = this.PC.getValue(0);
-        // int addr = (int)Array.get(memory.memloc,0); 
-        int addr = this.PC.memloc[0];//not working. addr takes values of pc
-        int ir = this.IR.setValue(0,addr);
-        System.out.println(addr);
-        System.out.println("Processor is now fetching...");
-        return addr;
-        // System.out.println("Adding address to instruction register");
-        // int ir = this.IR.setValue(0,addr);
-        // return addr;
- 
-        // // }
-        // // catch (NullPointerException e) { 
-        // //     System.out.println("Exception thrown : " + e); 
-        // // } 
+    this.PC = new MyMemory();//initialize program counter of size 1
+    this.IR = new MyMemory();//initialize instruction register of size 8
+    this.ACC = new MyMemory(); //initialize accumulator of size 8
+    this.PC.setValue(0,0); //sets program counter to 0
+    this.didhalt = false;
+    this.memory = memory;
     }
 
-    //This method takes the value from address location and loads it into the accumulator
-    public int execute(){
-        switch (key) {
-            case value:
-                
-                break;
+    public int fetch(){
         
-            default:
-                break;
+        if (this.didhalt)return false;
+        int address = this.PC.getContents();
+        int ir = memory.getValue(address);
+        if(ir == address){
+            this.IR.setValue(0,ir);
+            this.PC.add();
+            System.out.println("Processor is now fetching..");
+            return 1;
         }
-        // fetch();
-        // char operation;
-        // int ac = 0;
-        // // //add if statements for opcode in order to carry out instructions
-        // for(int i = 0; i<memory.getSize(); i++){
-        //     if (memory.memloc[i] == 7){
-        //         ac = memory.memloc[i];
-        //         System.out.print(ac);
-        //     }
-        // }
-                
-        //     }
-        //     elif
-        // }
+        return 0;
+       
 
-        System.out.println("Processor is now executing..");
+    } 
+    public int execute(){
+        System.out.println("Processor is now execting..");
         return 1;
     } 
-    //This method will generate the fib series using the above methods
-    // public int[]fibseries{
-    // }
 
 } //end abstract class Processor
