@@ -14,16 +14,13 @@ public abstract class Memory {
         System.out.println("Initializing memory size");
         this.size=size;
         memloc = new int[size];
-        
-        
-        
     }
 
     public int getSize(){
         return size;
     }
 
-    public int getValue(int index){
+    public int getValue(int index){ //gets the value in memory at index specified
        return memloc[index]; 
     }
 

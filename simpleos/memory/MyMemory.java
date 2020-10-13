@@ -11,9 +11,9 @@ public class MyMemory extends Memory {
           
         }
 
-        public MyMemory(){
+        // public MyMemory(){
             
-        }
+        // }
 
         public void printSize(){
             System.out.println("The Size of the memory is: " + getSize());
@@ -25,11 +25,6 @@ public class MyMemory extends Memory {
             memstring[3] = "0010";
             memstring[4] = "0101";
             memstring[5] = "0100";
-            // String[] memstring == new String[] {"0001","0010","0101","0100","0011","0111"};
-            // for(int=0; i <memstring.getSize(); i++){
-            //     System.out.println(memstring[i]);
-            // }
-            
             
         }
         public void toDecimal(){
@@ -41,7 +36,6 @@ public class MyMemory extends Memory {
         public void toBinary(){
             for(int i = 0; i>super.getSize(); i++){
                 memstring[i] = Integer.toBinaryString(memloc[i]);
-
             }
             System.out.println(Arrays.toString(memstring));
 

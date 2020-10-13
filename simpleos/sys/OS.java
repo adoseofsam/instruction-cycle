@@ -13,7 +13,7 @@ public class OS {
             MyMemory m = new MyMemory(6);
             MyProcessor p = new MyProcessor();
             
-            m.populateMemory();
+            m.populateMemory(); 
             m.printSize();
             System.out.println("Contents in memory: "+Arrays.toString(m.memstring));
             // for(int i = 0; i<m.getSize(); i++){
