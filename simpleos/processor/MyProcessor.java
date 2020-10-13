@@ -30,8 +30,7 @@ public  class MyProcessor extends Processor {
     }
 
     public int fetch(){
-        
-        if (this.didhalt)return false;
+        // if (this.didhalt)return false;
         int address = this.PC.getContents();
         int ir = memory.getValue(address);
         if(ir == address){
@@ -45,6 +44,10 @@ public  class MyProcessor extends Processor {
 
     } 
     public int execute(){
+        Instruction ir = this.IR.getInstruction();
+        int addr;
+        int opcode= memory.toBinary(ir.getInstruction());
+        
         System.out.println("Processor is now execting..");
         return 1;
     } 

@@ -6,6 +6,8 @@ public abstract class Memory {
 
     public int memloc [];
     public int size;
+    public final int Read_error = 1;
+    private int error;
 
     public Memory(int size){
         System.out.println("Initializing memory size");
@@ -30,7 +32,15 @@ public abstract class Memory {
 
     }
 
-
+    public int read(int loc){
+        int value = 0;
+        if(loc < 0 || loc >= getSize()){
+            error = Read_error;
+        
+        }
+        else value = memory[loc];
+        return value;
+    }
 
     public int setValue(int index, int value) {
         try{

@@ -21,6 +21,9 @@ public class MyMemory extends Memory {
         this.instruction = new Instruction();
         
     }
+    public Instruction getInstruction(){
+        return this.instruction;
+    }
     public void add(){
         this.contents++;
     }
