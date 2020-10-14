@@ -13,6 +13,7 @@ public class OS {
             final int size = 12;
             Message msg = new Message();
             msg.display();
+            Thread.sleep(2000);
             MyMemory m = new MyMemory(size);
             MyProcessor p = new MyProcessor();
             System.out.println(Arrays.toString(m.memloc));

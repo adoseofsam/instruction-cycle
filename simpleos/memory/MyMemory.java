@@ -33,16 +33,9 @@ public class MyMemory extends Memory {
         this.contents = contents;
     }
 
-    public void Mutint(Instruction instruction){
-        this.instruction = instruction;
-    }
 
     public int getContents(){
         return this.contents;
-    }
-
-    public void Contents(int contents){
-        this.contents = contents;
     }
     
 
@@ -92,10 +85,6 @@ public class MyMemory extends Memory {
     }
 
     public void populateMemory(){
-        int index = 0;
-        int instruct;
-        int middle = (int)Math.floor(size/2);
-        int addr = middle;
         memloc[0] = toBinary(30);  
         memloc[1] = toBinary(7);
         memloc[2] = toBinary(20);
