@@ -2,6 +2,7 @@ package simpleos.sys;
 
 import simpleos.memory.*;
 import simpleos.processor.*;
+import java.util.Arrays;
 
 
 public class OS {
@@ -14,7 +15,7 @@ public class OS {
             msg.display();
             MyMemory m = new MyMemory(size);
             MyProcessor p = new MyProcessor();
-            
+            System.out.println(Arrays.toString(m.memloc));
             Thread.sleep(1000);
             // m.printSize();
             p.fetch();            

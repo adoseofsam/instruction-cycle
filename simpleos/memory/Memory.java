@@ -14,6 +14,7 @@ public abstract class Memory {
         this.size=size;
         memloc = new int[size];
         
+        
     }
 
     public Memory(){
@@ -38,7 +39,7 @@ public abstract class Memory {
             error = Read_error;
         
         }
-        else value = memory[loc];
+        else value = memloc[loc];
         return value;
     }
 

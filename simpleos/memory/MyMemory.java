@@ -7,6 +7,7 @@ public class MyMemory extends Memory {
 
     private Instruction instruction;
     private int contents;
+    public int input = 0;
     private Memory memory;
 
 
@@ -26,6 +27,10 @@ public class MyMemory extends Memory {
     }
     public void add(){
         this.contents++;
+    }
+
+    public void Data(int contents){
+        this.contents = contents;
     }
 
     public void Mutint(Instruction instruction){
