@@ -37,7 +37,7 @@ public  class MyProcessor extends Processor {
         // if (this.didhalt)return false;
         int address = this.PC.getValue(0); //gets the address of the instruction at this location in memory
   
-            this.IR.setValue(0,address); //store it into the IR
+            this.IR.setValue(0,address); //stores it into the IR
             address++;   //increments program counter
             System.out.println("Processor is now fetching..");
             // return 1;
@@ -55,25 +55,29 @@ public  class MyProcessor extends Processor {
         int num;
         Instruction ir = this.IR.getInstruction();
         int addr;
-        int opcode= memory.toDecimal(ir.getInstruction());
+        int opcode= memory.toDecimal(ir.getInstruction()); //opcode 
 
         switch (opcode) {
             case load:
+            //Loads accumulator contents into memory
                 addr = memory.toDecimal(ir.getAddress());
                 memory_value = this.memory.getValue(addr);
                 this.ACC.read(memory_value);
                 break;
             case store:
+            //Stores accumulator contents into memory
                 addr = memory.toDecimal(ir.getAddress());
                 acc = this.ACC.getContents();
                 this.memory.setValue(addr,acc);
                 break;
             case loadin:
+            //loads standard input to accumulator
                 int value = memory.input;
                 memory.input++;
                 this.ACC.Data(memory.input);
                 break;
             case subtract:
+            //substract accumulator contents from memory 
                 addr = memory.toDecimal(ir.getAddress());
                 memory_value = memory.getValue(addr);
                 acc = this.ACC.getContents();
@@ -81,6 +85,7 @@ public  class MyProcessor extends Processor {
                 this.ACC.Data(num);
                 break;
             case add:
+            //add to accumulator from memory
                 addr = memory.toDecimal(ir.getAddress());
                 memory_value = this.memory.getValue(addr);
                 acc = this.ACC.getContents();
@@ -89,12 +94,14 @@ public  class MyProcessor extends Processor {
                 this.ACC.Data(num);
                 break;
             case storeout:
+            //store accumulator content to standard output
                 acc = this.ACC.getContents();
                 this.fibseries += acc;
                 break;
             case halt:
+                // Halt the CPU
                 this.fibseries+="";
-                return 0;
+                didhalt = true;
             default:
                 System.out.println("Unrecognized Opcode");
                 break;
