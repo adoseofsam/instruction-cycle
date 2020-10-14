@@ -3,22 +3,25 @@ package simpleos.processor;
 import simpleos.memory.*;
 public  class MyProcessor extends Processor {
 
-    private MyMemory PC;    //
+    private MyMemory PC;    
     private MyMemory IR;   //stores address
     private MyMemory ACC; //store computations
-    private int size;
-    private MyMemory memory;
-    private String fibseries ="";
-    private final int load = 11;
-    private final int loadin = 30;
-    private final int store = 21;
-    private final int storeout = 7;
-    private final int add = 5;
-    private final int subtract = 4;
-    private final int halt = 43;
+    private MyMemory memory; //MyMemory instance is created
+    private String fibseries =""; //variable that will store the fibonacci sequence
+    //Load/Store operations; 
+    private final int load;
+    private final int loadin;
+    private final int store;
+    private final int storeout;
+    //Arithmetic Operations
+    private final int add;
+    private final int subtract;
+    //Transfer-of-control operations
+    private final int halt;
     private boolean didhalt;
 
-
+    /*This is the constructor for the MyProcessor class.It takes in as parameter an instance of Mymemory 
+    ,initializes the registers and create sets the value of the PC */
     public MyProcessor(MyMemory m){
     this.PC = new MyMemory();//initialize program counter 
     this.IR = new MyMemory();//initialize instruction register 
@@ -28,13 +31,15 @@ public  class MyProcessor extends Processor {
     this.memory = m;
     }
 
+    /*This function fetches instruction at specified address in memory
+    and puts it/loads it into the instruction register*/
     public int fetch(){
         // if (this.didhalt)return false;
-        int address = this.PC.getValue(0);
-        int ir = memory.getValue(address);
-        if(ir == address){
-            this.IR.setValue(0,ir);
-            address++;
+        int address = this.PC.getValue(0); //gets the address of the instruction at this location in memory
+        int ir = memory.getValue(address); 
+        if(ir == address){    //check to see if the values are the same
+            this.IR.setValue(0,ir); //store it into the IR
+            address++;   //increments program counter
             System.out.println("Processor is now fetching..");
             return 1;
         }
