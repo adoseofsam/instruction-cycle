@@ -10,12 +10,11 @@ public class OS {
     public static void main(String[] args){
 
         try {
-            final int size = 12;
             Message msg = new Message();
             msg.display();
             Thread.sleep(2000);
-            MyMemory m = new MyMemory(size);
-            MyProcessor p = new MyProcessor();
+            MyMemory m = new MyMemory(12);
+            MyProcessor p = new MyProcessor(m);
             System.out.println(Arrays.toString(m.memloc));
             Thread.sleep(1000);
             // m.printSize();

@@ -1,12 +1,10 @@
 package simpleos.processor;
 
 import simpleos.memory.*;
-
-
 public  class MyProcessor extends Processor {
 
-    private MyMemory PC;    
-    private MyMemory IR;    
+    private MyMemory PC;    //
+    private MyMemory IR;   //stores address
     private MyMemory ACC; //store computations
     private int size;
     private MyMemory memory;
@@ -21,13 +19,13 @@ public  class MyProcessor extends Processor {
     private boolean didhalt;
 
 
-    public MyProcessor(){
-    this.PC = new MyMemory();//initialize program counter of size 1
-    this.IR = new MyMemory();//initialize instruction register of size 8
-    this.ACC = new MyMemory(); //initialize accumulator of size 8
+    public MyProcessor(MyMemory m){
+    this.PC = new MyMemory();//initialize program counter 
+    this.IR = new MyMemory();//initialize instruction register 
+    this.ACC = new MyMemory(); //initialize accumulator 
     this.PC.setValue(0,0); //sets program counter to 0
     this.didhalt = false;
-    this.memory = memory;
+    this.memory = m;
     }
 
     public int fetch(){
