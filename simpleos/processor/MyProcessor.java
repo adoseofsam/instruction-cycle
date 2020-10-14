@@ -9,15 +9,15 @@ public  class MyProcessor extends Processor {
     private MyMemory memory; //MyMemory instance is created
     private String fibseries =""; //variable that will store the fibonacci sequence
     //Load/Store operations; 
-    private final int load;
-    private final int loadin;
-    private final int store;
-    private final int storeout;
+    private final int load = 10;
+    private final int loadin = 3;
+    private final int store=21;;
+    private final int storeout= 7;
     //Arithmetic Operations
-    private final int add;
-    private final int subtract;
+    private final int add=5;
+    private final int subtract=31;;
     //Transfer-of-control operations
-    private final int halt;
+    private final int halt=43;;
     private boolean didhalt;
 
     /*This is the constructor for the MyProcessor class.It takes in as parameter an instance of Mymemory 
@@ -36,17 +36,19 @@ public  class MyProcessor extends Processor {
     public int fetch(){
         // if (this.didhalt)return false;
         int address = this.PC.getValue(0); //gets the address of the instruction at this location in memory
-        int ir = memory.getValue(address); 
-        if(ir == address){    //check to see if the values are the same
-            this.IR.setValue(0,ir); //store it into the IR
+  
+            this.IR.setValue(0,address); //store it into the IR
             address++;   //increments program counter
             System.out.println("Processor is now fetching..");
-            return 1;
-        }
+            // return 1;
+        
         return 0;
        
 
     } 
+    /*This function is used to take the value from the address location, loads it into the 
+    Accumulator and performs the action specified by the operation code.*/
+    
     public int execute(){
         int acc;
         int memory_value;
@@ -102,6 +104,7 @@ public  class MyProcessor extends Processor {
         System.out.println("Processor is now execting..");
         return 1;
     } 
+    /*This method is used to output the fibonacci series*/
     public String Fibseries(){
         return this.fibseries;
     }
