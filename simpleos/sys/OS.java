@@ -10,7 +10,7 @@ public class OS {
     public static void main(String[] args){
 
         try {
-            final int size = 100;
+            final int size = 12;
             Message msg = new Message();
             msg.display();
             MyMemory m = new MyMemory(size);

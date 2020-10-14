@@ -96,18 +96,18 @@ public class MyMemory extends Memory {
         int instruct;
         int middle = (int)Math.floor(size/2);
         int addr = middle;
-        memloc[0] = toBinary(3);  
+        memloc[0] = toBinary(30);  
         memloc[1] = toBinary(7);
-        memloc[2] = toBinary(2);
-        memloc[3] = toBinary(3);
-        memloc[4] = toBinary(2);
-        memloc[5] = toBinary(1);
+        memloc[2] = toBinary(20);
+        memloc[3] = toBinary(30);
+        memloc[4] = toBinary(21);
+        memloc[5] = toBinary(11);
         memloc[6] = toBinary(5);
         memloc[7] = toBinary(7);
-        memloc[8] = toBinary(2);
+        memloc[8] = toBinary(21);
         memloc[9] = toBinary(4);
-        memloc[10] = toBinary(2);
-        memloc[11] = toBinary(8);
+        memloc[10] = toBinary(21);
+        memloc[11] = toBinary(43);
     }
 
     

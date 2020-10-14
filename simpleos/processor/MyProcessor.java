@@ -11,13 +11,13 @@ public  class MyProcessor extends Processor {
     private int size;
     private MyMemory memory;
     private String fibseries ="";
-    private final int load = 1;
-    private final int loadin = 3;
-    private final int store = 2;
+    private final int load = 11;
+    private final int loadin = 30;
+    private final int store = 21;
     private final int storeout = 7;
     private final int add = 5;
     private final int subtract = 4;
-    private final int halt = 8;
+    private final int halt = 43;
     private boolean didhalt;
 
 
