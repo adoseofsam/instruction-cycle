@@ -110,34 +110,6 @@ public class MyMemory extends Memory {
         memloc[11] = toBinary(43);
     }
 
-    
-
-    //     instruct = toBinary(3);
-    //     // addr = toBinary(addr);
-    //     instruction = new Instruction(instruct,toBinary(addr));
-    //     Memory.memloc.setValue(index,instruction);
-
-    //     instruct = toBinary(7);
-    //     // addr = toBinary(addr);
-    //     instruction = new Instruction(instruct,toBinary(addr));
-
-    //     instruct = toBinary(2);
-    //     // addr = toBinary(addr);
-    //     instruction = new Instruction(instruct,toBinary(addr));
-
-    //     instruct = toBinary(3);
-    //     // addr = toBinary(addr);
-    //     instruction = new Instruction(instruct,toBinary(addr));
-
-    //     instruct = toBinary(2);
-    //     // addr = toBinary(addr);
-    //     instruction = new Instruction(instruct,toBinary(addr));
-
-
-        
-
-    // }
-
    
 
     public void printSize(){
