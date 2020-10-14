@@ -32,7 +32,7 @@ public  class MyProcessor extends Processor {
 
     public int fetch(){
         // if (this.didhalt)return false;
-        int address = this.PC.getContents();
+        int address = this.PC.getValue(0);
         int ir = memory.getValue(address);
         if(ir == address){
             this.IR.setValue(0,ir);
