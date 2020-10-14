@@ -36,7 +36,7 @@ public  class MyProcessor extends Processor {
         int ir = memory.getValue(address);
         if(ir == address){
             this.IR.setValue(0,ir);
-            this.PC.add();
+            address++;
             System.out.println("Processor is now fetching..");
             return 1;
         }
